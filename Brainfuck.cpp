@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Brainfuck.h"
 
-Brainfuck::Brainfuck() : ip(0) {}
+Brainfuck::Brainfuck() : ip(0) { std::cin >> std::noskipws; }
 
 Brainfuck::Brainfuck(const std::string& str) : ip(0), m_str(str) {
 }
@@ -26,7 +26,7 @@ void Brainfuck::Go() {
             case ',': CM(); break;
             case '[': OB(); break;
             case ']': CB(); break;
-            default: throw "Invalid input"; break;
+            default: break;
         };
         ++ip;
     }
